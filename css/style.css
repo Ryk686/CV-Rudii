@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 
+
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -147,6 +148,7 @@ html {
   color: white;
   font-weight: normal;
 }
+
 
 /* 4. SECTION (KOTAK KONTEN) */
 section {
