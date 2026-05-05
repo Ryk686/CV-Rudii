@@ -1,5 +1,5 @@
 // Proteksi index - taruh PALING ATAS
-if (sessionStorage.getItem('loggedIN') !== 'true') {
+if (sessionStorage.getItem('loggedIN') !== 'true' && !window.location.href.includes('login.html')) {
     window.location.href = 'login.html';
 }
 
