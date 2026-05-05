@@ -3,6 +3,7 @@ if (sessionStorage.getItem('loggedIN') !== 'true' && !window.location.href.inclu
     window.location.href = 'login.html';
 }
 
+
 // Fungsi login
 function cekLogin() {
     const user = document.getElementById('username').value.trim();
