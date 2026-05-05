@@ -160,9 +160,8 @@ section {
 
 h2 {
   color: #2c3e50;
-  
   text-align: center;
-  /* display: inline-block; */
+  display: inline-block;
   margin-bottom: 15px;
   padding-bottom: 40px;
 }
@@ -214,17 +213,9 @@ li {
     flex-wrap: nowrap;
     padding: 0 10px
     /* justify-content: center; */
-    height: 60px;
+    height: 50px;
   }
 
-  Perbaikan Konten Section (PENTING!)
-  .tentang, .pendidikan, .pengalaman, .skill, .project, .hobi {
-    padding: 20px 15px; /* Padding dikecilkan agar teks tidak terjepit */
-    font-size: 15px;    /* Font size lebih nyaman dibaca di HP */
-    width: 95%;        /* Lebar hampir full layar */
-    background-color: rgba(238, 221, 170, 0.7);
-    text-align: justify;
-  }
 }
 
 /* ===== SECTION UMUM ===== */
