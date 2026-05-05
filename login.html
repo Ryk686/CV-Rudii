@@ -14,6 +14,11 @@
     <button class="btn-login" onclick="cekLogin()">Masuk</button>
 </div>
 
-<script src="script.js"></script>
+
+<script src="">
+    if (!sessionStorage.getItem('loggedIn')) {
+    window.location.href = 'login.html';
+</script>
+<!-- <script src="script.js"></script> -->
 </body>
 </html>
