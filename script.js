@@ -1,6 +1,6 @@
-if (!sessionStorage.getItem('loggedIn'))
+if (!sessionStorage.getItem('loggedIn')) {
     window.location.href = 'login.html';
-
+}
 
 function cekLogin() {
             const user = document.getElementById('username').value;
