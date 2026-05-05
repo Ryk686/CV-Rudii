@@ -1,3 +1,7 @@
+if (!sessionStorage.getItem('loggedIn'))
+    window.location.href = 'login.html';
+
+
 function cekLogin() {
             const user = document.getElementById('username').value;
             const pass = document.getElementById('password').value;
@@ -8,7 +12,7 @@ function cekLogin() {
               
             } 
             else {
-                    alert('Username atau Password salah');
+                    alert('Username atau Password salah bro');
             }
         }
 
