@@ -183,32 +183,60 @@ li {
   font-size: 0.9rem;
 }
 
-/* 6. RESPONSIVE (Tampilan HP) */
 @media (max-width: 768px) {
+  /* Header & Profil */
   .header {
     flex-direction: column;
     text-align: center;
-    
+    max-width: 90%; /* Biar kotak tidak mentok pinggir layar */
+    padding: 20px;
+    gap: 10px;
+    margin: 10px auto;
   }
+
   .foto {
     margin-right: 0;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    width: 100px; /* Ukuran disesuaikan untuk layar kecil */
+    height: 120px;
   }
+
+  .info h1 {
+    font-size: 22px; /* Ukuran nama dikecilkan dikit biar gak pecah baris */
+  }
+
+  /* Navigasi */
   .nav-links {
-    display: none; /* Sembunyikan menu di HP agar tidak tumpang tindih */
+    display: none; 
   }
+  
   .navbar {
-    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 0 10px
+    /* justify-content: center; */
+    height: 60px;
+  }
+
+  Perbaikan Konten Section (PENTING!)
+  .tentang, .pendidikan, .pengalaman, .skill, .project, .hobi {
+    padding: 20px 15px; /* Padding dikecilkan agar teks tidak terjepit */
+    font-size: 15px;    /* Font size lebih nyaman dibaca di HP */
+    width: 95%;        /* Lebar hampir full layar */
+    background-color: rgba(238, 221, 170, 0.7);
+    text-align: justify;
   }
 }
 
 /* ===== SECTION UMUM ===== */
-.tentang, .pendidikan, .pengalaman, .skill, .project, .hobi {
-  padding: 40px 50px;
-  text-align: justify;
-  background-color: rgba(238, 221, 170, 0.7);
-  font-size: 20px;
-}
+
+/* Perbaikan Konten Section (PENTING!) */
+  .tentang, .pendidikan, .pengalaman, .skill, .project, .hobi {
+    padding: 20px 15px; /* Padding dikecilkan agar teks tidak terjepit */
+    font-size: 15px;    /* Font size lebih nyaman dibaca di HP */
+    width: 95%;        /* Lebar hampir full layar */
+    background-color: rgba(238, 221, 170, 0.7);
+    text-align: justify;
+  }
 
 .tentang h2, .pendidikan h2, .pengalaman h2, .skill h2, .project h2, .hobi h2 {
   text-align: left;
