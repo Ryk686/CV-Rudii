@@ -3,7 +3,7 @@
    Sections:
    1. Proteksi Halaman
    2. Fungsi Login
-   3. Fungsi Sidebar (Mobile Only)
+   3. Fungsi Sidebar
    ============================================================ */
 
 /* ===== 1. PROTEKSI HALAMAN ===== */
@@ -24,46 +24,65 @@ function cekLogin() {
   }
 }
 
-/* ===== 3. FUNGSI SIDEBAR (MOBILE ONLY) ===== */
+/* ===== 3. FUNGSI SIDEBAR ===== */
 function toggleSidebar() {
-  const navbar = document.querySelector('.navbar');
-  const overlay = document.getElementById('overlay');
-  const mainWrapper = document.querySelector('.main-wrapper');
+  const navbar   = document.querySelector('.navbar');
+  const overlay  = document.getElementById('overlay');
+  const wrapper  = document.querySelector('.main-wrapper');
   const hamburger = document.querySelector('.hamburger');
-  const body = document.querySelector('.index-body');
+  const body     = document.querySelector('.index-body');
 
   navbar.classList.toggle('open');
+  const isOpen = navbar.classList.contains('open');
 
   if (window.innerWidth > 768) {
-    // Desktop: tidak pakai overlay sama sekali
-    overlay.style.display = 'none'; // ← paksa overlay selalu sembunyi di desktop
-    
-    if (navbar.classList.contains('open')) {
-      // Sidebar ditutup
-      navbar.style.left = '-200px';
-      body.style.paddingLeft = '0';
-    } else {
-      // Sidebar dibuka
-      navbar.style.left = '0';
+    /* ── DESKTOP ── */
+    overlay.style.display = 'none'; // overlay tidak dipakai di desktop
+
+    if (isOpen) {
+      // Sidebar terbuka → ikon berubah jadi <
+      hamburger.innerHTML = '<b>&#60;</b>';
+      navbar.style.left   = '0';
       body.style.paddingLeft = '200px';
+    } else {
+      // Sidebar tertutup → ikon kembali ke ☰
+      hamburger.innerHTML = '<b>&#9776;</b>';
+      navbar.style.left   = '-200px';
+      body.style.paddingLeft = '0';
     }
+
   } else {
-    // Mobile: pakai overlay
-    overlay.style.display = ''; // ← reset ke CSS default
+    /* ── MOBILE ── */
+    overlay.style.display = ''; // kembalikan ke CSS
     overlay.classList.toggle('open');
-    mainWrapper.classList.toggle('sidebar-open');
-    hamburger.style.display = navbar.classList.contains('open') ? 'none' : 'block';
+    wrapper.classList.toggle('sidebar-open');
+
+    // Di mobile hamburger sembunyi, tombol < di dalam sidebar yang aktif
+    hamburger.style.display = isOpen ? 'none' : 'block';
+    hamburger.innerHTML = '<b>&#9776;</b>'; // tetap ☰ di mobile
   }
 }
 
+/* Reset saat resize */
 window.addEventListener('resize', () => {
-  const overlay = document.getElementById('overlay');
+  const navbar    = document.querySelector('.navbar');
+  const overlay   = document.getElementById('overlay');
+  const wrapper   = document.querySelector('.main-wrapper');
+  const hamburger = document.querySelector('.hamburger');
+  const body      = document.querySelector('.index-body');
+
+  navbar.classList.remove('open');
+  overlay.classList.remove('open');
+  wrapper.classList.remove('sidebar-open');
+  hamburger.innerHTML = '<b>&#9776;</b>';
+
   if (window.innerWidth > 768) {
-    overlay.style.display = 'none'; // ← sembunyikan overlay saat resize ke desktop
-    document.querySelector('.hamburger').style.display = 'block';
-    document.getElementById('overlay').classList.remove('open');
-    document.querySelector('.main-wrapper').classList.remove('sidebar-open');
+    overlay.style.display  = 'none';
+    hamburger.style.display = 'block';
+    navbar.style.left      = '-200px';
+    body.style.paddingLeft = '0';
   } else {
-    overlay.style.display = ''; // ← kembalikan ke CSS saat mobile
+    overlay.style.display  = '';
+    hamburger.style.display = 'block';
   }
 });

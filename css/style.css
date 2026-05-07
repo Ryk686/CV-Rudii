@@ -31,7 +31,7 @@ html {
 
 .index-body {
   min-height: 100vh;
-  background-image: url("../gambar/shanks.jpg");
+  background-image: url("../gambar/lampu.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -223,7 +223,7 @@ html {
 }
 
 .contact, .email {
-  font-size: 14px;
+  font-size: 15px;
   font-family: Geneva, Verdana, sans-serif;
   color: white;
   font-weight: normal;
@@ -420,7 +420,7 @@ li {
 /* ===== 9. FOOTER ===== */
 .footer {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   font-size: 14px;
   color: #7a6a50;
   border-top: 2px solid #c9b99a;
@@ -429,13 +429,14 @@ li {
 
 .footer a {
   display: block;
-  margin-top: 4px;
+  margin-top: 5px;
   color: #378ADD;
   text-decoration: none;
 }
 
 .footer a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color:inherit;
 }
 
 /* ===== 10. MOBILE (max-width: 768px) ===== */
@@ -526,6 +527,13 @@ li {
     padding-left: 12px; /* reset efek geser desktop */
   }
 
+  .footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
   /* Tombol keluar di sidebar mobile */
   .btn {
     margin: 8px 0 0 0;
@@ -577,6 +585,8 @@ li {
     font-size: 15px;
     width: 100%;
   }
+
+}
 
 } /* ===== AKHIR MOBILE ===== */
 
