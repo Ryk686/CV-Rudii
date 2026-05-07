@@ -1,4 +1,20 @@
-/* 1. RESET & DASAR */
+/* ============================================================
+   STYLE.CSS — CV Rudi Yuridul Khoir
+   Sections:
+   1. Reset & Dasar
+   2. Navbar Sidebar (Desktop)
+   3. Header (Foto & Nama)
+   4. Section & Konten
+   5. Timeline
+   6. Skill
+   7. Project
+   8. Hobi
+   9. Footer
+   10. Mobile (max-width: 768px)
+   11. Login
+   ============================================================ */
+
+/* ===== 1. RESET & DASAR ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
@@ -6,110 +22,177 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 html {
-  scroll-behavior: smooth; /* Efek scroll halus saat klik menu */
-  scroll-padding-top: 80px; /* PENTING: Agar judul tidak tertutup navbar saat pindah */
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
 }
-        
-/* index.HTML */
+
 .index-body {
-  margin: 0;
   min-height: 100vh;
   background-image: url("../gambar/shanks.jpg");
-  background-position: top;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   color: #333;
   line-height: 1.6;
-  padding-top: 80px; /* Memberi ruang di atas agar konten tidak tertutup navbar */
+  padding-top: 20px;       /* tidak perlu besar, sidebar di kiri bukan atas */
+  padding-left: 200px;     /* geser konten ke kanan sejauh lebar sidebar */
 }
 
-/* 2. NAVBAR (NAVIGASI) */
+/* ===== 2. NAVBAR — SIDEBAR DESKTOP ===== */
 .navbar {
   display: flex;
-  background: linear-gradient(135deg, rgba(90, 139, 141, 0.85), rgba(41,128,185,0.85));
-  height: 65px;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  position: fixed; /* Menempel di atas */
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: linear-gradient(180deg, rgba(41,128,185,0.95), rgba(90,139,141,0.95));
+  width: 200px;
+  height: 100vh;
+  padding: 30px 15px 20px;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.nav-logo {
+  margin-bottom: 20px;
 }
 
 .nav-logo a {
   color: #2804f596;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
   text-transform: uppercase;
+   line-height: 80px;
 }
 
-.nav-logo a span{
+.nav-logo a span {
   color: #ff3700;
 }
 
 .nav-links {
-  align-items: center;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   list-style: none;
+  gap: 4px;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li {
-  displaya: flex;
-  margin-left: 25px;
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin: 0;
 }
 
 .nav-links a {
+  display: block;
+  width: 100%;
   color: white;
   text-decoration: none;
-  font-size: 16px;
-  transition: 0.3s;
-
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 12px;
+  border-radius: 10px;
+  letter-spacing: 0.3px;
+  line-height: normal;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .nav-links a:hover {
-  color: #3498db;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  padding-left: 16px;
 }
 
-.navbar .darkLight-searchBox {
-  display: flex;
-  align-items: center;
+/* Tidak perlu garis bawah di sidebar */
+.nav-links a::after {
+  display: none;
 }
 
-  /* TOMBOL KELUAR */
- .btn {
-    padding: 9px 15px;
-    border-radius: 30px;
-    margin-right: 20px;
-    color: white;
-    background: #ff3700;
-    border: none;
-    font-weight: bold;
-    font-size: 15px;
+/* Tombol keluar didorong ke bawah sidebar */
+.btn {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff3700, #ff6a00);
+  box-shadow: 0 4px 15px rgba(255,55,0,0.4);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
 }
 
 .btn:hover {
-  background: #3498db;
-  transition: 0.3s;
-  transform: scale(1.1);
+  background: linear-gradient(135deg, #e03000, #ff5500);
+  box-shadow: 0 6px 20px rgba(255,55,0,0.6);
+  transform: scale(1.03);
 }
 
 .btn:active {
-  background: #3498db;
+  transform: scale(0.97);
 }
 
-/* 3. HEADER (FOTO & NAMA) */
+/* Hamburger — hanya di mobile */
+.hamburger {
+  /* Tombol toggle di desktop */
+  display: block;  /* tampil di semua ukuran */
+  position: fixed;
+  top: 16px;
+  left: 14px;
+  z-index: 1001;
+  font-size: 22px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  line-height: 1;
+  padding: 0;
+
+}
+
+/* Tombol close sidebar — hanya di mobile */
+.close-sidebar {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Overlay — hanya tampil saat sidebar terbuka di mobile */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 998;
+}
+
+.overlay.open {
+  display: block;
+}
+
+/* ===== 3. HEADER (FOTO & NAMA) ===== */
 .header {
   background: linear-gradient(135deg, rgba(52,170,174,0.85), rgba(41,128,185,0.85));
   max-width: 490px;
@@ -137,8 +220,8 @@ html {
   color: white;
   font-size: 26px;
   margin-bottom: 8px;
-  
 }
+
 .contact, .email {
   font-size: 14px;
   font-family: Geneva, Verdana, sans-serif;
@@ -146,8 +229,7 @@ html {
   font-weight: normal;
 }
 
-
-/* 4. SECTION (KOTAK KONTEN) */
+/* ===== 4. SECTION & KONTEN ===== */
 section {
   background: white;
   max-width: 800px;
@@ -160,10 +242,8 @@ section {
 
 h2 {
   color: #2c3e50;
-  text-align: center;
   display: inline-block;
   margin-bottom: 15px;
-  padding-bottom: 40px;
 }
 
 ul {
@@ -174,69 +254,27 @@ li {
   margin-bottom: 10px;
 }
 
-/* 5. FOOTER */
-.footer {
-  text-align: center;
-  padding: 30px;
-  color: #888;
-  font-size: 0.9rem;
+.tentang, .pendidikan, .pengalaman, .skill, .project, .hobi {
+  padding: 20px;
+  font-size: 18px;
+  width: 95%;
+  background-color: rgba(238,221,170,0.7);
+  text-align: justify;
 }
 
-@media (max-width: 768px) {
-  /* Header & Profil */
-  .header {
-    flex-direction: column;
-    text-align: center;
-    max-width: 90%; /* Biar kotak tidak mentok pinggir layar */
-    padding: 20px;
-    gap: 10px;
-    margin: 10px auto;
-  }
-
-  .foto {
-    margin-right: 0;
-    margin-bottom: 10px;
-    width: 100px; /* Ukuran disesuaikan untuk layar kecil */
-    height: 120px;
-  }
-
-  .info h1 {
-    font-size: 22px; /* Ukuran nama dikecilkan dikit biar gak pecah baris */
-  }
-
-  /* Navigasi */
-  .nav-links {
-    display: none; 
-  }
-  
-  .navbar {
-    flex-wrap: nowrap;
-    padding: 0 10px
-    /* justify-content: center; */
-    height: 50px;
-  }
-
-}
-
-/* ===== SECTION UMUM ===== */
-
-/* Perbaikan Konten Section (PENTING!) */
-  .tentang, .pendidikan, .pengalaman, .skill, .project, .hobi {
-    padding: 20px 15px; /* Padding dikecilkan agar teks tidak terjepit */
-    font-size: 15px;    /* Font size lebih nyaman dibaca di HP */
-    width: 95%;        /* Lebar hampir full layar */
-    background-color: rgba(238, 221, 170, 0.7);
-    text-align: justify;
-  }
-
-.tentang h2, .pendidikan h2, .pengalaman h2, .skill h2, .project h2, .hobi h2 {
+.tentang h2,
+.pendidikan h2,
+.pengalaman h2,
+.skill h2,
+.project h2,
+.hobi h2 {
   text-align: left;
   border-bottom: 3px solid #2c3e50;
   padding-bottom: 8px;
   margin: 0 0 24px 0;
 }
 
-/* ===== TIMELINE (Pendidikan & Pengalaman) ===== */
+/* ===== 5. TIMELINE ===== */
 .timeline {
   position: relative;
   padding-left: 32px;
@@ -265,7 +303,7 @@ li {
   height: 12px;
   border-radius: 50%;
   background: #1D9E75;
-  border: 2px solid rgba(238, 221, 170, 0.7);
+  border: 2px solid rgba(238,221,170,0.7);
 }
 
 .timeline-dot.aktif {
@@ -300,7 +338,6 @@ li {
   color: #1e40af;
 }
 
-/* ===== PENGALAMAN KERJA ===== */
 .job-desc {
   margin: 8px 0 0 16px;
   padding: 0;
@@ -309,7 +346,7 @@ li {
   line-height: 1.8;
 }
 
-/* ===== SKILL ===== */
+/* ===== 6. SKILL ===== */
 .skill-group {
   margin-bottom: 1.2rem;
 }
@@ -332,12 +369,12 @@ li {
   font-size: 13px;
   padding: 4px 12px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255,255,255,0.6);
   color: #2c3e50;
   border: 1px solid #c9b99a;
 }
 
-/* ===== PROJECT ===== */
+/* ===== 7. PROJECT ===== */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -348,7 +385,7 @@ li {
   padding: 1rem 1.25rem;
   border: 1px solid #c9b99a;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255,255,255,0.4);
 }
 
 .project-card h3 {
@@ -364,7 +401,7 @@ li {
   line-height: 1.6;
 }
 
-/* ===== HOBI ===== */
+/* ===== 8. HOBI ===== */
 .hobi-list {
   display: flex;
   flex-wrap: wrap;
@@ -375,19 +412,19 @@ li {
   font-size: 15px;
   padding: 6px 16px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255,255,255,0.5);
   color: #2c3e50;
   border: 1px solid #c9b99a;
 }
 
-/* ===== FOOTER ===== */
+/* ===== 9. FOOTER ===== */
 .footer {
   text-align: center;
   padding: 2rem 1rem;
   font-size: 14px;
   color: #7a6a50;
   border-top: 2px solid #c9b99a;
-  background-color: rgba(238, 221, 170, 0.9);
+  background-color: rgba(238,221,170,0.9);
 }
 
 .footer a {
@@ -401,45 +438,182 @@ li {
   text-decoration: underline;
 }
 
-/* LOGIN.HTML  */
- .login-body {
-            background-color: #3498db;
-             background-size: cover;
-             background-position: center;
-             min-height: 100vh;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             margin: 0;
-             padding: 0;
-        }
+/* ===== 10. MOBILE (max-width: 768px) ===== */
+@media (max-width: 768px) {
 
-        .login-container{
-            width: 90%;
-            max-width: 350px;
-            text-align: center;
-            background: rgba(255,255,255,0.85);
-            backdrop-filter: blur(10px);
-            padding: 50px 40px;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+  /* Reset padding desktop */
+  .index-body {
+    padding-left: 0;
+    padding-top: 20px;
+  }
 
-            input {
-                width: 100%;
-                box-sizing: border-box;
-                padding: 12px;
-                border: 2px solid #ddd;
-                border-radius: 10px;
-                background: white;
-                font-size: 14px;
-            }
+  /* Hamburger muncul */
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 16px;
+    left: 14px;
+    z-index: 1001;
+  }
 
-.btn-login{
+  /* Tombol close — pojok kanan atas sidebar */
+  .close-sidebar {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    left: auto;
+    font-size: 20px;
+    color: white;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002;
+  }
+
+  .close-sidebar:hover {
+    background: rgba(255,255,255,0.35);
+  }
+
+  /* Navbar jadi sidebar tersembunyi */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -160px;
+    width: 160px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 55px 10px 20px;
+    gap: 2px;
+    overflow-y: auto;
+    z-index: 999;
+    transition: left 0.3s ease;
+    background: linear-gradient(180deg, rgba(41,128,185,0.97), rgba(90,139,141,0.97));
+    box-shadow: none;
+  }
+
+  .navbar.open {
+    left: 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  }
+
+  /* Nav links vertikal */
+  .nav-links {
+    gap: 2px;
+    margin-top: 5px;
+  }
+
+  .nav-links li {
+    height: auto;
+  }
+
+  .nav-links a {
+    padding: 9px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    height: auto;
+  }
+
+  .nav-links a:hover {
+    padding-left: 12px; /* reset efek geser desktop */
+  }
+
+  /* Tombol keluar di sidebar mobile */
+  .btn {
+    margin: 8px 0 0 0;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  /* Logo di sidebar mobile */
+  .nav-logo a {
+    font-size: 1.1rem;
+  }
+
+  /* Konten geser saat sidebar terbuka */
+  .main-wrapper {
+    transition: margin-left 0.3s ease;
+    margin-left: 0;
+  }
+
+  .main-wrapper.sidebar-open {
+    margin-left: 160px;
+  }
+
+  /* Header profil */
+  .header {
+    flex-direction: column;
+    text-align: center;
+    max-width: 90%;
+    padding: 20px;
+    gap: 10px;
+    margin: 10px auto;
+  }
+
+  .foto {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 120px;
+  }
+
+  .info h1 {
+    font-size: 22px;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  .tentang, .pendidikan, .pengalaman, .skill, .project, .hobi {
+    font-size: 15px;
+    width: 100%;
+  }
+
+} /* ===== AKHIR MOBILE ===== */
+
+/* ===== 11. LOGIN ===== */
+.login-body {
+  background-color: #3498db;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  width: 90%;
+  max-width: 350px;
+  text-align: center;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.btn-login {
   width: 100%;
   padding: 12px;
   border: none;
@@ -452,8 +626,7 @@ li {
   transition: 0.3s;
 }
 
-.btn-login:hover{
+.btn-login:hover {
   background: #217dbb;
   transform: scale(1.03);
 }
-          
