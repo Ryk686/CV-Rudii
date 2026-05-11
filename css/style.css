@@ -22,6 +22,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 html {
@@ -70,8 +71,9 @@ html {
   text-decoration: none;
   font-size: 1.3rem;
   font-weight: bold;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
    line-height: 80px;
+
 }
 
 .nav-logo a span {

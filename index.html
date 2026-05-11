@@ -1,187 +1,206 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV - Rudi Yuridul Khoir</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV - Rudi Yuridul Khoir</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body class="index-body">
-  
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <button class="hamburger" onclick="toggleSidebar()"><b>☰</b></button>
-    <button class="close-sidebar" onclick="toggleSidebar()"><b><</b></button>
-    <div class="nav-logo">
-      <a href="#">Speed <span>RYK</span></a>
+  <body class="index-body">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <button class="hamburger" onclick="toggleSidebar()"><b>☰</b></button>
+      <button class="close-sidebar" onclick="toggleSidebar()"><b><</b></button>
+      <div class="nav-logo">
+        <a href="#">Speed<span>RYK</span></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#pendidikan">Pendidikan</a></li>
+        <li><a href="#pengalaman">Pengalaman</a></li>
+        <li><a href="#skill">Skill</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#hobi">Hobi</a></li>
+      </ul>
+      <button class="btn" onclick="window.location.href = 'login.html'">
+        Keluar
+      </button>
+    </nav>
+
+    <!-- OVERLAY (klik untuk tutup sidebar) -->
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <!-- SEMUA KONTEN DIBUNGKUS main-wrapper -->
+    <div class="main-wrapper">
+      <!-- HEADER -->
+      <header class="header">
+        <img src="gambar/foto.jpeg" alt="Foto Rudi" class="foto" />
+        <div class="info">
+          <h1>Rudi Yuridul Khoir</h1>
+          <a href="https://wa.me/082217018082" class="contact" target="_blank"
+            >📞 0822-1701-8082</a
+          >
+          <a
+            href="https://myaccount.google.com/?hl=id&utm_source=OGB&utm_medium=act&gar=WzJd&pli=1"
+            class="email"
+          >
+            ✉️ rudiyuri85@gmail.com</a
+          >
+        </div>
+      </header>
+
+      <!-- TENTANG -->
+      <section id="tentang" class="tentang">
+        <h2>Tentang Saya</h2>
+        <p>
+          Saya lulusan Ilmu Komunikasi dengan pengalaman kerja di lingkungan
+          perkantoran. Memiliki kemampuan komunikasi formal, administrasi, dan
+          pelayanan publik. Terbiasa bekerja sesuai SOP dan arahan atasan,
+          bertanggung jawab, serta siap berkontribusi secara konsisten dalam
+          mendukung pengembangan dan kelancaran kinerja organisasi. Saya
+          memiliki ketertarikan di bidang pemrograman web dan senantiasa
+          berupaya meningkatkan kompetensi di bidang ini.
+        </p>
+      </section>
+
+      <!-- PENDIDIKAN -->
+      <section id="pendidikan" class="pendidikan">
+        <h2>Pendidikan</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-tahun">2000 – 2006</span>
+            <h3>SDN Santaka</h3>
+            <p>Sekolah Dasar</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-tahun">2006 – 2009</span>
+            <h3>SMPN 2 Jatinangor</h3>
+            <p>Sekolah Menengah Pertama</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-tahun">2009 – 2012</span>
+            <h3>SMA PGRI Parakanmuncang</h3>
+            <p>Sekolah Menengah Atas · Jurusan IPS</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-tahun">2021 – 2025</span>
+            <h3>Universitas Terbuka</h3>
+            <p>Perguruan Tinggi</p>
+            <p>Sarjana Ilmu Komunikasi (S.I.Kom)</p>
+          </div>
+
+          <div class="timeline-item aktif">
+            <div class="timeline-dot aktif"></div>
+            <span class="timeline-tahun"
+              >2025 – <b>?</b> <span class="badge">Aktif</span></span
+            >
+            <h3>Self-taught</h3>
+            <p>Mempelajari Front-End Web Development</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PENGALAMAN KERJA -->
+      <section id="pengalaman" class="pengalaman">
+        <h2>Pengalaman Kerja</h2>
+        <div class="timeline">
+          <div class="timeline-item aktif">
+            <div class="timeline-dot aktif"></div>
+            <span class="timeline-tahun"
+              >2013 – Sekarang <span class="badge">Aktif</span></span
+            >
+            <h3>Cleaning Service</h3>
+            <p>Dinas Kesehatan Provinsi Jawa Barat</p>
+            <ul class="job-desc">
+              <li>
+                Menjaga kebersihan dan kerapian lingkungan kantor sesuai SOP
+              </li>
+              <li>Berkoordinasi dengan tim dan atasan secara profesional</li>
+              <li>Memastikan kenyamanan ruang kerja pegawai instansi</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILL -->
+      <section id="skill" class="skill">
+        <h2>Keahlian</h2>
+        <div class="skill-group">
+          <h3>Pemrograman Web</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Komputer & Administrasi</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Microsoft Word</span>
+            <span class="skill-tag">Microsoft Excel</span>
+            <span class="skill-tag">Microsoft PowerPoint</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECT -->
+      <section id="project" class="project">
+        <h2>Project</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <h3>Website CV Online</h3>
+            <p>
+              Website portofolio pribadi yang menampilkan profil, pendidikan,
+              pengalaman kerja, dan keahlian secara interaktif.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+          <div class="project-card">
+            <h3>Form Login</h3>
+            <p>
+              Halaman login dengan validasi input dan sistem autentikasi
+              sederhana menggunakan sessionStorage.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOBI -->
+      <section id="hobi" class="hobi">
+        <h2>Hobi</h2>
+        <div class="hobi-list">
+          <div class="hobi-item">💻 Coding</div>
+          <div class="hobi-item">🐟 Ikan Cupang</div>
+          <div class="hobi-item">🏃 Running</div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <p><b>© 2026 RYK</b></p>
+        <a href="https://github.com/rudiyuridul" target="_blank"
+          >github.com/Ryk686</a
+        >
+      </footer>
     </div>
-    <ul class="nav-links">
-      <li><a href="#tentang">Tentang</a></li>
-      <li><a href="#pendidikan">Pendidikan</a></li>
-      <li><a href="#pengalaman">Pengalaman</a></li>
-      <li><a href="#skill">Skill</a></li>
-      <li><a href="#project">Project</a></li>
-      <li><a href="#hobi">Hobi</a></li>
-    </ul>
-    <button class="btn" onclick="window.location.href='login.html'">Keluar</button>
-  </nav>
+    <!-- END main-wrapper -->
 
-  <!-- OVERLAY (klik untuk tutup sidebar) -->
-  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
-
-  <!-- SEMUA KONTEN DIBUNGKUS main-wrapper -->
-  <div class="main-wrapper">
-
-    <!-- HEADER -->
-    <header class="header">
-      <img src="gambar/foto.jpeg" alt="Foto Rudi" class="foto">
-      <div class="info">
-        <h1>Rudi Yuridul Khoir</h1>
-        <a href="https://wa.me/082217018082" class="contact" target="_blank">📞 0822-1701-8082</a>
-      <a href="https://myaccount.google.com/?hl=id&utm_source=OGB&utm_medium=act&gar=WzJd&pli=1" class="email">
-          ✉️ rudiyuri85@gmail.com
-      </a>
-      </div>
-    </header>
-
-    <!-- TENTANG -->
-    <section id="tentang" class="tentang">
-      <h2>Tentang Saya</h2>
-      <p>
-        Saya lulusan baru Ilmu Komunikasi dengan pengalaman kerja di lingkungan perkantoran.
-        Memiliki kemampuan komunikasi formal, administrasi, dan pelayanan publik. Terbiasa
-        bekerja sesuai SOP dan arahan atasan, bertanggung jawab, serta siap berkontribusi
-        secara konsisten dalam mendukung pengembangan dan kelancaran kinerja organisasi.
-        Saya memiliki minat di bidang pemrograman web dan terus belajar mengembangkan
-        kemampuan coding.
-      </p>
-    </section>
-
-    <!-- PENDIDIKAN -->
-    <section id="pendidikan" class="pendidikan">
-      <h2>Pendidikan</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <span class="timeline-tahun">2000 – 2006</span>
-          <h3>SDN Santaka</h3>
-          <p>Sekolah Dasar</p>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <span class="timeline-tahun">2006 – 2009</span>
-          <h3>SMPN 2 Jatinangor</h3>
-          <p>Sekolah Menengah Pertama</p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <span class="timeline-tahun">2009 – 2012</span>
-          <h3>SMA PGRI Parakanmuncang</h3>
-          <p>Sekolah Menengah Atas · Jurusan IPS</p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <span class="timeline-tahun">2021 – 2025</span>
-          <h3>Universitas Terbuka</h3>
-          <p>Perguruan Tinggi</p>
-          <p>Sarjana Ilmu Komunikasi (S.I.Kom)</p>
-        </div>
-
-        <div class="timeline-item aktif">
-          <div class="timeline-dot aktif"></div>
-          <span class="timeline-tahun">2025 – <b>?</b> <span class="badge">Aktif</span></span>
-          <h3>Self-taught</h3>
-          <p>Mempelajari Front-End Web Development</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PENGALAMAN KERJA -->
-    <section id="pengalaman" class="pengalaman">
-      <h2>Pengalaman Kerja</h2>
-      <div class="timeline">
-        <div class="timeline-item aktif">
-          <div class="timeline-dot aktif"></div>
-          <span class="timeline-tahun">2013 – Sekarang <span class="badge">Aktif</span></span>
-          <h3>Cleaning Service</h3>
-          <p>Dinas Kesehatan Provinsi Jawa Barat</p>
-          <ul class="job-desc">
-            <li>Menjaga kebersihan dan kerapian lingkungan kantor sesuai SOP</li>
-            <li>Berkoordinasi dengan tim dan atasan secara profesional</li>
-            <li>Memastikan kenyamanan ruang kerja pegawai instansi</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILL -->
-    <section id="skill" class="skill">
-      <h2>Keahlian</h2>
-      <div class="skill-group">
-        <h3>Pemrograman Web</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">HTML</span>
-          <span class="skill-tag">CSS</span>
-          <span class="skill-tag">JavaScript</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h3>Komputer & Administrasi</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Microsoft Word</span>
-          <span class="skill-tag">Microsoft Excel</span>
-          <span class="skill-tag">Microsoft PowerPoint</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECT -->
-    <section id="project" class="project">
-      <h2>Project</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>Website CV Online</h3>
-          <p>Website portofolio pribadi yang menampilkan profil, pendidikan, pengalaman kerja, dan keahlian secara interaktif.</p>
-          <div class="skill-tags">
-            <span class="skill-tag">HTML</span>
-            <span class="skill-tag">CSS</span>
-            <span class="skill-tag">JavaScript</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <h3>Form Login</h3>
-          <p>Halaman login dengan validasi input dan sistem autentikasi sederhana menggunakan sessionStorage.</p>
-          <div class="skill-tags">
-            <span class="skill-tag">HTML</span>
-            <span class="skill-tag">CSS</span>
-            <span class="skill-tag">JavaScript</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOBI -->
-    <section id="hobi" class="hobi">
-      <h2>Hobi</h2>
-      <div class="hobi-list">
-        <div class="hobi-item">💻 Coding</div>
-        <div class="hobi-item">🐟 Ikan Cupang</div>
-        <div class="hobi-item">🏃 Running</div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <p><b>© 2026 RYK</b></p>
-      <a href="https://github.com/rudiyuridul" target="_blank">github.com/Ryk686</a>
-    </footer>
-
-  </div>
-  <!-- END main-wrapper -->
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
